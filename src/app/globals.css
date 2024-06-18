@@ -1,33 +1,170 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  @layer base {
+    :root {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+ 
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  body {
+    background: linear-gradient(to right bottom, #1d4fd7, rgb(30, 64, 175), rgb(17, 24, 39));
+    color: white
   }
-}
+
+  .moving{
+    margin-top: 100px
+  }
+
+  .details{
+    margin-top: 60px
+  }
+
+  .items{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-evenly !important;
+    flex-direction: row-reverse!important;
+    align-items: center !important;
+
+  }
+
+  .questions{
+    width: 50%;
+    display: flex;
+   flex-direction: column
+  }
+
+  .line{
+    display: flex;
+    margin-top: 10px 0px;
+    justify-content: space-evenly;
+  }
+  .questions > div .line{
+    margin: 10px;
+    ;
+  }
+
+  .active--color{
+    color: white;
+    background-color: #1d4fd7;
+  }
+
+  .list{
+    border-radius: 5px ;
+    padding: 10px;
+  }
+  .section{
+    margin-top: 100px;
+  }
+
+  .start{
+    height: 100vh;
+  }
+
+  .video--part{
+    display: flex  ;
+    margin-top: 150px;
+  }
+
+  .record{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+
+  .new--button{
+    margin-top: 10px;
+  }
+
+  .players div{
+    margin: 10px;
+
+  }
+
+  .new--buttons {
+   margin: 10px;
+   
+   display: flex;
+   flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .description{
+    width: 400px;
+    border-radius: 15px;
+    border: 1px solid white;
+    padding: 10px; 
+  }
+
+  .new--buttons button, .new--button > *{
+    margin: 10px;
+  }
+
+  .background{
+    background-color: rgba(128, 169, 128, 0.657);
+  }
