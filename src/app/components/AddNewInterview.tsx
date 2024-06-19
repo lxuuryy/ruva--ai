@@ -45,9 +45,9 @@ function AddNewInterview({}: Props) {
         setExperience(e.target.value)
     }
   return (
-    <div className='relative '>
-        <div className='m-[40px]'>
-            <h1 className='my-2 font-bold text-[70px]'> Interviews</h1>
+    <div className='relative w-full overflow-hidden '>
+        <div className='md:m-[40px]'>
+            <h1 className='my-2 font-bold text-[45px] md:text-[70px]'> Interviews</h1>
 
         <Button setDialog={setDialog} dialog={false} />
         <Form dialog={dialog} setDialog={setDialog} jsonResponse={jsonResponse} setJsonResponse={setJsonResponse} loading={loading} setLoading={setLoading} setExperience={setExperience} setJobDescription={setJobDescription} setJobPosition={setJobPosition}   jobDescription={jobDescription} jobPosition={jobPosition} experience={experience} 

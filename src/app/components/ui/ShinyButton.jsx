@@ -3,7 +3,7 @@ import {Plus } from 'lucide-react'
 
 function ShinyButton({setDialog}) {
   return (
-    <div class="relative inline-flex  group">
+    <div class="relative inline-flex  group my-[35px] mx-2">
         <div
             class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#E11D48] via-[#E11D48] to-[#E11D48] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
         </div>

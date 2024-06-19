@@ -28,8 +28,8 @@ function InterviewList() {
     
     }
   return (
-    <div className='m-[40px] relative overflow-hidden'>
-        <h1 className='font-bold text-[70px] my-2'>Previous Interviews</h1>
+    <div className='md:m-[40px] relative overflow-hidden'>
+        <h1 className='font-bold text-[45px] md:text-[70px] my-2'>Previous Interviews</h1>
       
 <div className='w-full flex overflow-hidden flex-wrap justify-between items-center'>
 {
