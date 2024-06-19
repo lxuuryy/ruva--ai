@@ -6,6 +6,7 @@ import React from "react";
 import Button from "./components/Button";
 import AddNewInterview from "./components/AddNewInterview";
 import InterviewList from "./components/InterviewList";
+import { BackgroundGradientAnimationDemo } from "./components/ui/BackgroundGradientAnimationDemo";
 
 
 export default function Home() {
@@ -31,9 +32,12 @@ export default function Home() {
 
   return (
     <main className="h-[100vh] w-full">
+      <div className="fixed top-0">
+    <BackgroundGradientAnimationDemo />
+    </div>
   <AddNewInterview />
 
-    <div>
+    <div className="absolute">
       <InterviewList />
     </div>
     </main>

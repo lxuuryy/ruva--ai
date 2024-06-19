@@ -6,6 +6,7 @@ import { MockInterview } from '../../utils/schema'
 import { eq, desc, orderBy } from 'drizzle-orm'
 import { Inter } from 'next/font/google'
 import InterviewCard from './InterviewCard'
+import InterviewCard2 from './InterviewCard2'
 
 function InterviewList() {
 
@@ -27,13 +28,16 @@ function InterviewList() {
     
     }
   return (
-    <div className='m-[40px]'>
+    <div className='m-[40px] relative overflow-hidden'>
         <h1 className='font-bold text-[70px] my-2'>Previous Interviews</h1>
-        {
+      
+<div className='w-full flex overflow-hidden flex-wrap justify-between items-center'>
+{
             interviews.length > 0 && interviews.map((item, index) => (
-                <InterviewCard key={index} item={item} />
+                <InterviewCard2 key={index} item={item} />
             ))
         }
+        </div>
         
     </div>
   )

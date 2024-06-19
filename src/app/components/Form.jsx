@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label"
 import React from "react"
 import { chatSession } from "../../utils/GeminiAIModal"
 
-import { LoaderCircle } from "lucide-react"
+import { Loader2, LoaderCircle } from "lucide-react"
 import {db} from '../../utils/db'
 import  {MockInterview } from '../../utils/schema'
 import { uuid } from 'uuidv4';
@@ -149,14 +149,8 @@ setLoading(true)
             <Button onClick={handleClick} variant="outline">
               Close
             </Button>
-            <Button type="submit" disabled={loading} onClick={handleSubmit}>{loading ? <>  <PropagateLoader
-        color='black'
-        loading={loading}
-        cssOverride={override}
-        size={3}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      /> Ruva is in th works </>: 'Generate with Ruva'}</Button>
+            <Button type="submit" disabled={loading} onClick={handleSubmit}>{loading ? <>  <Loader2 className="animate-spin"
+      /> Ruva is in the works </>: 'Generate with Ruva'}</Button>
           </DialogFooter>
         </DialogContent>
      

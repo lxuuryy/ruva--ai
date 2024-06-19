@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
+import ShinyButton from "./ui/ShinyButton"
 
 type Props = {
     dialog: boolean,
@@ -13,5 +14,5 @@ export default function ButtonOutline({setDialog}: Props) {
         setDialog(true)
     
     }
-  return <Button onClick={handleClick} variant="ghost" className="w-[200px] ml-[20px] border flex justify-around">Add Interview <Plus /></Button>
+  return <ShinyButton setDialog={setDialog} />
 }

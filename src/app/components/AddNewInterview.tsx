@@ -2,10 +2,29 @@
 import React from 'react'
 import Button from './Button'
 import Form from './Form'
+import {useClerk, useUser} from '@clerk/nextjs'
+import { useRouter } from 'next/navigation';
 
 type Props = {}
 
 function AddNewInterview({}: Props) {
+
+  const {isSignedIn, user} = useUser();
+  const {signOut} = useClerk();
+
+  const router = useRouter();
+
+  React.useEffect(() => {
+
+    if(!isSignedIn){
+      router.push('/sign-in')
+    }
+  
+    if(isSignedIn){
+      router.push('/')
+    }
+
+  }, []);
 
     const [dialog, setDialog] = React.useState(false)
     const [jobPosition, setJobPosition] = React.useState('')
@@ -26,7 +45,7 @@ function AddNewInterview({}: Props) {
         setExperience(e.target.value)
     }
   return (
-    <div className=''>
+    <div className='relative '>
         <div className='m-[40px]'>
             <h1 className='my-2 font-bold text-[70px]'> Interviews</h1>
 

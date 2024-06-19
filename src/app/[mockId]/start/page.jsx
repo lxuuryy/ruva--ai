@@ -22,7 +22,7 @@ function page({params}) {
         const resp = await db.select().from(MockInterview)
         .where(eq(MockInterview.mockId, params.mockId))
 
-        const jsonResp = JSON.parse(resp[0].jsonMockResp)
+        const jsonResp = JSON.parse(resp[0]?.jsonMockResp)
         console.log(jsonResp)
         setInterviewDetails(jsonResp)
 

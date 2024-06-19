@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 function InterviewCard({item}) {
   return (
-    <div>
+    <div className='relative'>
         <div className='description'>
             <h2>{item?.jobPosition}</h2>
             <p>{item?.jobDesc}</p>
