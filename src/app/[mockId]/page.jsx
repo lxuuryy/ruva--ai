@@ -7,6 +7,8 @@ import Webcam from 'react-webcam'
 import { Video } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {useRouter } from 'next/navigation'
+import FlipWordsDemo from '../components/ui/FlipWordsDemo'
+import InterviewCard3 from '../components/InterviewCard3'
 
 
 function page({params}) {
@@ -36,12 +38,13 @@ function page({params}) {
      }
   return (
     <div className='h-[100vh] w-full flex-col justify-center items-center '>
-    <div className='moving flex justify-center items-center'>
-      <h1 className='font-bold text-2xl'>Let's get started</h1>
+    <div className='moving flex justify-center items-center flex-col'>
+    <FlipWordsDemo />
+      <h1 className='font-normal mt-[50px] text-2xl'>Let's get started</h1>
 
     </div>
-   <div className='items'>
-    <div>
+   <div className='items '>
+    <div className='flex justify-between items-center '>
    {enableCamera ?  
    <div>
     <div><Webcam
@@ -49,18 +52,15 @@ function page({params}) {
     onUserMedia={() => setEnableCamera(true)}
     onUserMediaError={() => setEnableCamera(false)}
     mirrored/></div>
-    <div><Button onClick={showCamera}>Stop Camera</Button> <Button onClick={goStart}>Start</Button> </div>
+    <div className='flex justify-between'><Button onClick={showCamera}>Stop Camera</Button> <Button onClick={goStart}>Start</Button> </div>
     </div> : <div className='flex'><Button onClick={showCamera} > click to enable camera <Video onClick={showCamera} className='h-72' /></Button></div>}
    </div>
    
    <div className='details flex justify-center items-center flex-col text-center '>
-      <h1>Mock Interview Details</h1>
-      <div className='font-bold'>
-        <p>Job Position: {interviewDetails?.jobPosition}</p>
-        <p>Job Description: {interviewDetails?.jobDesc}</p>
-        <p>Years of Experience: {interviewDetails?.jobExperience}</p>
+     
+      <InterviewCard3 jobPosition={interviewDetails?.jobPosition} jobDesc={interviewDetails?.jobDesc}  jobExperience={interviewDetails?.jobExperience}/>
       </div>
-      </div>
+      
    </div>
   </div>
   

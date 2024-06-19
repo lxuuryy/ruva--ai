@@ -31,9 +31,12 @@ export default function Home() {
 
 
   return (
-    <main className="h-[100vh] w-full">
-      <div className="fixed top-0">
+    <main className="h-[100vh] overflow-hidden w-full">
+      <div className="w-full fixed top-0 flex flex-col">
     <BackgroundGradientAnimationDemo />
+    </div>
+    <div className="relative mt-[100px] w-full flex justify-center">
+    <p className="text-[30px]">Welcome {user?.firstName}! </p>
     </div>
   <AddNewInterview />
 

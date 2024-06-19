@@ -20,20 +20,20 @@ import {
   import React from 'react'
     import Link from 'next/link'
   
-  function InterviewCard2({item}) {
+  function InterviewCard2({jobDesc, jobPosition, jobExperience}) {
     return (
       
-        <Card className=" md:w-[350px] sm:m-[20px]">
+        <Card className="w-[350px] m-[20px]">
         <CardHeader>
-          <CardTitle>{item?.jobPosition}</CardTitle>
-          <CardDescription>{item?.createdAt}</CardDescription>
+          <CardTitle>Job Position: {jobPosition}</CardTitle>
+          
         </CardHeader>
         <CardContent>
           <form>
-            <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name">Job description: {item?.jobDesc}</Label>
-                <Label htmlFor="name">Years of Experience: {item?.jobExperience}</Label>
+            <div className="grid w-full text-left gap-4">
+              <div className="flex flex-col space-y-2.5 ">
+                <Label className="text-[20px]" htmlFor="name">Job description: <strong> {jobDesc}</strong></Label>
+                <Label className="text-[20px]"   htmlFor="name">Years of Experience: <strong>{jobExperience} </strong> </Label>
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="framework"></Label>
@@ -43,12 +43,7 @@ import {
           </form>
         </CardContent>
         <CardFooter className="flex justify-between">
-        <Link href={`/${item.mockId}/feedback`}>
-          <Button variant="outline">View Feedback</Button>
-            </Link>
-            <Link href={`/${item.mockId}`}>
-          <Button>Restart Interview</Button>
-          </Link>
+        
         </CardFooter>
       </Card>
     

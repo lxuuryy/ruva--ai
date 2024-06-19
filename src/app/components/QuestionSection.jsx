@@ -43,7 +43,7 @@ const prevQuestion = () => {
             <div className='line'>
             {mockInterviewQuestion?.map((question, index) => (
             <div key={index} className=''>
-                <Button className={`${activeQuestion === index && 'active--color'} list`}>Question {index+1}</Button>
+                <Button className={`${activeQuestion === index && 'active--color'} bg-transparent border border-slate-500 list`}>Question {index+1}</Button>
                
             </div>
             ))}
