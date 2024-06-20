@@ -3,13 +3,29 @@ import React from 'react'
 import dynamic from 'next/dynamic'  
 import { Button } from '../../components/ui/button'
 import Link from 'next/link'
-
+import { deductCredits } from '../util/action'
+import { useClerk } from '@clerk/nextjs'
 import { Volume2 } from 'lucide-react'
 
 const RecordAnswer = dynamic(() => import('./RecordAnswer'), { ssr: false });
  
 
 function QuestionSection({mockInterviewQuestion, params}) {
+
+    const {session} = useClerk()
+
+    const minusCredits = async () => {
+        const {success, error} = await deductCredits()
+
+        if(success){
+            console.log('success')
+        } else {
+            console.log(error)
+        }
+
+        session?.reload()
+        
+    }
 
     const [userAnswer, setUserAnswer] = React.useState('');
 
@@ -65,7 +81,7 @@ const prevQuestion = () => {
         {activeQuestion != mockInterviewQuestion?.length - 1 && <Button onClick={nextQuestion}>Next Question</Button>}
         {activeQuestion == mockInterviewQuestion?.length-1 && 
         <Link href={`/${params}/feedback`}>
-        <Button>End Interview</Button> </Link>}
+        <Button onClick={minusCredits}>End Interview</Button> </Link>}
         
         </div>
         </div>
