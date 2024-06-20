@@ -46,7 +46,7 @@ export async function createStripeCheckoutSession(lineItems: LineItem[]) {
       return { sessionId: null, checkoutError: 'You need to sign in first.' }
     }
   
-    const origin = 'http://localhost:3000' as string
+    const origin = 'https://ruva-ai.vercel.app' as string
   
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
