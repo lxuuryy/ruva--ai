@@ -21,11 +21,7 @@ function RecordAnswer({ activeQuestion, userAnswer, setUserAnswer, mockInterview
     useLegacyResults: false,
   });
 
-  React.useEffect(() => {
-    if (!isRecording ) {
-      updateToDb();
-    }
-  }, [userAnswer]);
+
 
   React.useEffect(() => {
     results?.map((result) => {
@@ -34,6 +30,12 @@ function RecordAnswer({ activeQuestion, userAnswer, setUserAnswer, mockInterview
     
   }, [results]);
 
+  React.useEffect(() => {
+    if(!isRecording && userAnswer.length > 10){
+      updateToDb()
+    }
+  }, [userAnswer]);
+
   const clearText = () => {
     stopSpeechToText();
   };
@@ -41,7 +43,7 @@ function RecordAnswer({ activeQuestion, userAnswer, setUserAnswer, mockInterview
   const startStopRecording = async () => {
     if (isRecording) {
       stopSpeechToText();
-      
+     
       
     } else {
       
@@ -74,10 +76,10 @@ function RecordAnswer({ activeQuestion, userAnswer, setUserAnswer, mockInterview
         if (resp) {
           
          
-          setUserAnswer('');
+         setUserAnswer('')
           setResults([])
         }
-        
+        setResults([])
       }
     } catch (error) {
       console.error('Error saving answer:', error);
