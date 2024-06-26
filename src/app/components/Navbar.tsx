@@ -70,7 +70,7 @@ function Navbar() {
                         </div>
                     </div>
                 ) : (
-                    <div className="flex justify-between items-center">
+                    <div className="flex w-full justify-between items-center">
                      <div className="relative w-[150px] h-[150px]">
                         <Image src="/RUVA.ai.png" fill alt="logo" />
                        </div>
