@@ -23,17 +23,17 @@ import {
   function InterviewCard2({jobDesc, jobPosition, jobExperience}) {
     return (
       
-        <Card className="w-[350px] m-[20px]">
+        <Card className=" w-[250px] h-[200px] md:w-[350px] md:m-[20px] ">
         <CardHeader>
-          <CardTitle>Job Position: {jobPosition}</CardTitle>
+          <CardTitle  className="md:text-[20px] text-[16px] " >Job Position: {jobPosition}</CardTitle>
           
         </CardHeader>
         <CardContent>
           <form>
             <div className="grid w-full text-left gap-4">
               <div className="flex flex-col space-y-2.5 ">
-                <Label className="text-[20px]" htmlFor="name">Job description: <strong> {jobDesc}</strong></Label>
-                <Label className="text-[20px]"   htmlFor="name">Years of Experience: <strong>{jobExperience} </strong> </Label>
+                <Label className="md:text-[20px] " htmlFor="name">Job description: <strong> {jobDesc}</strong></Label>
+                <Label className="md:text-[20px]"   htmlFor="name">Years of Experience: <strong>{jobExperience} </strong> </Label>
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="framework"></Label>

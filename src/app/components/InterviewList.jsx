@@ -28,10 +28,10 @@ function InterviewList() {
     
     }
   return (
-    <div className='md:m-[40px] relative overflow-hidden'>
-        <h1 className='font-bold text-[45px] md:text-[70px] my-2'>Previous Interviews</h1>
+    <div className=' z-[999]  md:m-[40px] relative overflow-hidden'>
+        <h1 className='font-bold text-[45px] md:text-[70px] m-2 mt-[50px]'>Previous Interviews</h1>
       
-<div className='w-full flex overflow-hidden flex-wrap justify-between items-center'>
+<div className='w-full flex overflow-hidden flex-wrap  items-center'>
 {
             interviews.length > 0 && interviews.map((item, index) => (
                 <InterviewCard2 key={index} item={item} />

@@ -82,7 +82,7 @@ export default function SubscriptionDialog({
                 key={tier.id}
                 className={cn(
                   tier.mostPopular
-                    ? 'ring-2 ring-pink-600'
+                    ? 'ring-2 ring-blue-600'
                     : 'ring-1 ring-white-200',
                   'rounded-3xl p-8 xl:p-10'
                 )}
@@ -98,7 +98,7 @@ export default function SubscriptionDialog({
                     {tier.name}
                   </h3>
                   {tier.mostPopular ? (
-                    <p className='rounded-full bg-pink-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-pink-600'>
+                    <p className='rounded-full bg-blue-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-blue-600'>
                       Most popular
                     </p>
                   ) : null}
@@ -119,9 +119,9 @@ export default function SubscriptionDialog({
                   aria-describedby={tier.id}
                   className={cn(
                     tier.mostPopular
-                      ? 'bg-pink-600 text-white shadow-sm hover:bg-pink-500'
-                      : 'text-pink-600 ring-1 ring-inset ring-pink-200 hover:ring-pink-300',
-                    'mt-6 block w-full rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-600'
+                      ? 'bg-blue-600 text-white shadow-sm hover:bg-blue-500'
+                      : 'text-blue-600 ring-1 ring-inset ring-blue-200 hover:ring-blue-300',
+                    'mt-6 block w-full rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
                   )}
                 >
                   Get started today
@@ -133,7 +133,7 @@ export default function SubscriptionDialog({
                   {tier.features.map(feature => (
                     <li key={feature} className='flex gap-x-3'>
                       <Check
-                        className='h-6 w-5 flex-none text-pink-600'
+                        className='h-6 w-5 flex-none text-blue-600'
                         aria-hidden='true'
                       />
                       {feature}

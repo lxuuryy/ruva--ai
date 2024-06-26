@@ -54,12 +54,12 @@ const prevQuestion = () => {
     const [activeQuestion, setActiveQuestion] = React.useState(0)
   return (
     <div className='video--part'>
-        <h1>Question Section</h1>
-        <div className='questions'>
+        
+        <div className='questions m-4'>
             <div className='line'>
             {mockInterviewQuestion?.map((question, index) => (
             <div key={index} className=''>
-                <Button className={`${activeQuestion === index && 'active--color'} bg-transparent border border-slate-500 list`}>Question {index+1}</Button>
+                <Button className={`${activeQuestion === index && 'active--color'} `}>Question {index+1}</Button>
                
             </div>
             ))}

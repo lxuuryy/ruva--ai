@@ -6,7 +6,7 @@ export default function FlipWordsDemo() {
 
   return (
     <div className="mt-[150px] flex justify-center items-center px-4">
-      <div className="text-4xl mx-auto font-normal text-white">
+      <div className="text-xl md:text-4xl w-full relative left-10 font-normal text-white">
         Ruva is
         <FlipWords duration={1500} words={words} /> <br />
         top notch questions for you

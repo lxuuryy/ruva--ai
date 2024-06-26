@@ -23,8 +23,8 @@ import {
   function InterviewCard2({item}) {
     return (
       
-        <Card className="md:max-w-[350px] sm:m-[20px]">
-        <CardHeader>
+<Card className=" md:max-w-[350px] m-[20px] h-[250px] w-[350px] flex flex-col justify-between">
+          <CardHeader>
           <CardTitle>{item?.jobPosition}</CardTitle>
           <CardDescription>{item?.createdAt}</CardDescription>
         </CardHeader>

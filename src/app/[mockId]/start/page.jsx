@@ -36,7 +36,7 @@ React.useEffect(() => {
 
 
   return (
-    <div className='start'>start page
+    <div className='start'>
 
       <QuestionSection mockInterviewQuestion={interviewDetails} params={params.mockId} />  
     </div>

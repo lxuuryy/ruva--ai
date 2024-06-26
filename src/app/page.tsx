@@ -7,6 +7,8 @@ import Button from "./components/Button";
 import AddNewInterview from "./components/AddNewInterview";
 import InterviewList from "./components/InterviewList";
 import { BackgroundGradientAnimationDemo } from "./components/ui/BackgroundGradientAnimationDemo";
+import Main from "./components/ui/Main";
+
 
 
 export default function Home() {
@@ -16,33 +18,13 @@ export default function Home() {
   const {isSignedIn, user} = useUser();
   const {signOut} = useClerk();
 
-  React.useEffect(() => {
 
-    if(!isSignedIn){
-      router.push('/sign-in')
-    }
-  
-    if(isSignedIn){
-      router.push('/')
-    }
-
-  }, []);
 
 
 
   return (
-    <main className="overflow-hidden w-full">
-      <div className="w-full h-full fixed top-0 flex flex-col">
-    <BackgroundGradientAnimationDemo />
-    </div>
-    <div className="relative mt-[50px] mb-[100px] w-full flex justify-center">
-    <p className="text-[30px]">Welcome {user?.firstName}! </p>
-    </div>
-  <AddNewInterview />
-
-    <div className="absolute">
-      <InterviewList />
-    </div>
+    <main className="">
+        <Main />
     </main>
   );
 }

@@ -96,7 +96,7 @@ setLoading(true)
   return (
      <Dialog open={dialog}>
       
-        <DialogContent className="sm:max-w-[725px]">
+        <DialogContent className="sm:max-w-[725px] z-[999] rounded-xl">
           <DialogHeader>
             <DialogTitle>Add your interview details</DialogTitle>
             <DialogDescription>
@@ -105,7 +105,7 @@ setLoading(true)
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
+              <Label htmlFor="name" className="text-right text-xs md:text-sm">
                 Job Position / Role
               </Label>
               <Input
@@ -119,7 +119,7 @@ setLoading(true)
               />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="stack" className="text-right">
+              <Label htmlFor="stack" className="text-right md:text-sm">
                 Job Description
               </Label>
               <Input
@@ -132,7 +132,7 @@ setLoading(true)
                 />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="experience" className="text-right">
+              <Label htmlFor="experience" className="text-right md:text-sm">
                 Years of experience
               </Label>
               <Input
@@ -146,10 +146,10 @@ setLoading(true)
             </div>
           </div>
           <DialogFooter>
-            <Button onClick={handleClick} variant="outline">
+            <Button onClick={handleClick} variant="outline" className="my-2">
               Close
             </Button>
-            <Button type="submit" disabled={loading} onClick={handleSubmit}>{loading ? <>  <Loader2 className="animate-spin"
+            <Button type="submit" className="my-2" disabled={loading} onClick={handleSubmit}>{loading ? <>  <Loader2 className="animate-spin"
       /> Ruva is in the works </>: 'Generate with Ruva'}</Button>
           </DialogFooter>
         </DialogContent>

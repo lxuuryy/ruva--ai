@@ -1,11 +1,13 @@
 'use client'
 import React from 'react'
-import Button from './Button'
+
 import Form from './Form'
 import {useClerk, useUser} from '@clerk/nextjs'
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'; 
+import { Plus } from "lucide-react"
+import { Button } from '../../components/ui/button'
 
-type Props = {}
+type Props = {} 
 
 function AddNewInterview({}: Props) {
 
@@ -16,15 +18,17 @@ function AddNewInterview({}: Props) {
 
   React.useEffect(() => {
 
-    if(!isSignedIn){
-      router.push('/sign-in')
-    }
   
-    if(isSignedIn){
-      router.push('/')
-    }
+   
+      if (isSignedIn === false) {
+        router.push('/sign-in')
+      }
+   
+  
+    console.log(isSignedIn)
+   
 
-  }, []);
+  }, [isSignedIn]);
 
     const [dialog, setDialog] = React.useState(false)
     const [jobPosition, setJobPosition] = React.useState('')
@@ -45,11 +49,12 @@ function AddNewInterview({}: Props) {
         setExperience(e.target.value)
     }
   return (
-    <div className='relative w-full overflow-hidden '>
+    <div className='relative md:mt-[100px] z-[999] w-full overflow-hidden '>
         <div className='md:m-[40px]'>
-            <h1 className='my-2 font-bold text-[45px] md:text-[70px]'> Interviews</h1>
+            <h1 className='m-2 font-bold text-[45px] md:text-[70px]'> Interviews</h1>
 
-        <Button setDialog={setDialog} dialog={false} />
+        
+        <Button className=' z-[999] w-[200px] py-[10px] text-white m-2' onClick={() => setDialog((prev) => !prev)} >Add Interview <Plus /> </Button>
         <Form dialog={dialog} setDialog={setDialog} jsonResponse={jsonResponse} setJsonResponse={setJsonResponse} loading={loading} setLoading={setLoading} setExperience={setExperience} setJobDescription={setJobDescription} setJobPosition={setJobPosition}   jobDescription={jobDescription} jobPosition={jobPosition} experience={experience} 
         jobPositionHandler={jobPositionHandler} jobDescriptionHandler={jobDescriptionHandler} experienceHandler={experienceHandler} />
         </div>

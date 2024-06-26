@@ -7,6 +7,9 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../../../co
 import { Button } from '../../../components/ui/button'
 import { ChevronsUpDown } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import LinearGradient from '../../components/magicui/linear-gradient'
+import ShineBorder from '../../components/magicui/shine-border'
+
 
 function page({params}) {
 
@@ -31,24 +34,27 @@ function page({params}) {
 
    
   return (
-    <div> feedback page
+    <div> 
+      <LinearGradient />
       { feedback.length > 0 ? <div> <div>
-            <h1>Congratulations!</h1>
-            <p>Thank you for participating in the mock interview. Please provide your feedback below.</p>
+            <h1 className='text-5xl'>Congratulations!</h1>
+            <p className='mt-[10px]'>Thank you for participating in the mock interview. Please provide your feedback below.</p>
 
         </div>
-        <div className='max-w-[300px]'>
+        <div className=' '>
         {
             feedback && feedback.map((item, index) => (
-                <div key={index}>
+                <div className='m-[10px]' key={index}>
                     <Collapsible>
-                        <CollapsibleTrigger className='flex'>{item.question} <ChevronsUpDown /></CollapsibleTrigger>
+                        <CollapsibleTrigger className='flex w-full'>Q{index+1}. {item.question} <ChevronsUpDown /></CollapsibleTrigger>
                         
-                        <CollapsibleContent>
-                          <div><h2 ><strong style={{color:'red'}}>Rating:</strong>{item.rating}</h2></div>
-                            <div style={{color:'red'}}><h2><strong style={{color:'red'}}>Your Answer: </strong>{item.userAns}</h2></div>
-                            <div><h2><strong style={{color:'white'}}>Ruva's feedback: </strong>{item.feedback}</h2></div>
-                            <div className='bg-green-50' ><h2 style={{color:'green'}}><strong className='text-green-950'>Feedback:</strong>{item.correctAnswer}</h2></div>
+                        <CollapsibleContent  className='m-[20px] flex flex-col justify-between'>
+                          <div><h2 className="m-[20px] "><strong style={{color:'red'}}>Rating:</strong>{item.rating}</h2></div>
+                            <div ><h2 className="m-[20px] "><strong style={{color:'white'}}>Your Answer: </strong>{item.userAns}</h2></div>
+                            <div className='m-[20px] '><h2><strong className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-pink-500">
+      Ruva's feedback: 
+    </strong>{item.feedback}</h2></div>
+                            <div className='m-[20px]' ><h2 ><strong style={{color:'green'}}>Better answer:</strong>{item.correctAnswer}</h2></div>
                         </CollapsibleContent>
 </Collapsible>
 
@@ -56,7 +62,9 @@ function page({params}) {
             ))
         }
         </div> </div> : <div> <h1>No feedback available</h1></div>}
-        <Button onClick={() => router.replace('/')}>Go Home</Button>
+        <div className='flex justify-end w-full'>
+        <Button className='mr-[10px]' onClick={() => router.replace('/')}>Go Home</Button>
+        </div>
     </div>
   )
 }

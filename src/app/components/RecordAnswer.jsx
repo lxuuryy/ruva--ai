@@ -42,6 +42,7 @@ function RecordAnswer({ activeQuestion, userAnswer, setUserAnswer, mockInterview
     if (isRecording) {
       stopSpeechToText();
       
+      
     } else {
       
       startSpeechToText();
