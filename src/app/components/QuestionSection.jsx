@@ -6,11 +6,16 @@ import Link from 'next/link'
 import { deductCredits } from '../util/action'
 import { useClerk } from '@clerk/nextjs'
 import { Volume2 } from 'lucide-react'
+import useSpeechToText from 'react-hook-speech-to-text';
 
 const RecordAnswer = dynamic(() => import('./RecordAnswer'), { ssr: false });
  
 
 function QuestionSection({mockInterviewQuestion, params}) {
+    const { error, interimResult, isRecording, results, setResults, startSpeechToText, stopSpeechToText } = useSpeechToText({
+        continuous: true,
+        useLegacyResults: false,
+      });
 
     const {session} = useClerk()
 
@@ -43,6 +48,7 @@ React.useEffect(() => {
 
 const nextQuestion = () => {
     setUserAnswer('')
+    setResults([])
     setActiveQuestion(activeQuestion+1)
 }
 

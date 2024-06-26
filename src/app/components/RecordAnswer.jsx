@@ -22,16 +22,16 @@ function RecordAnswer({ activeQuestion, userAnswer, setUserAnswer, mockInterview
   });
 
   React.useEffect(() => {
-    if (!isRecording && userAnswer.length > 1) {
+    if (!isRecording ) {
       updateToDb();
     }
   }, [userAnswer]);
 
   React.useEffect(() => {
-    results.forEach((result) => {
+    results?.map((result) => {
       setUserAnswer((prevAns) => prevAns + result?.transcript);
     });
-    clearText();
+    
   }, [results]);
 
   const clearText = () => {
@@ -72,10 +72,12 @@ function RecordAnswer({ activeQuestion, userAnswer, setUserAnswer, mockInterview
         });
 
         if (resp) {
-          clearText();
+          
+         
           setUserAnswer('');
           setResults([])
         }
+        
       }
     } catch (error) {
       console.error('Error saving answer:', error);
