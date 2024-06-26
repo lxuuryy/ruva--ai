@@ -17,7 +17,7 @@ export default function BackgroundBeamsDemo() {
         </p>
         <input
           type="text"
-          placeholder="hi@manuarora.in"
+          placeholder="Ruva's response is immaculate"
           className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700"
         />
       </div>
