@@ -52,7 +52,6 @@ function Navbar() {
                     <div className="w-full flex justify-between items-center">
                        <div className="relative w-[150px] h-[150px]">
                         <Image src="/RUVA.ai.png" fill alt="logo" />
-                                                    <ShimmerButton className=" mx-2" onClick={() => router.push('/sign-in')}> LOGIN </ShimmerButton>
 
                        </div>
                         <div className="m-2">
