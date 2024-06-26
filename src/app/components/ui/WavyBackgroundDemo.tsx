@@ -30,7 +30,7 @@ export function WavyBackgroundDemo() {
       
       <div> <Button onClick={()=> router.push(('/dashboard'))} variant='outline'>TRY NOW</Button>
       </div>
-      <div className="flex w-full pb-[30px] mt-[150px] justify-center items-center text-4xl md:text-[42px]  text-center text-balance">
+      <div className="flex w-full pb-[30px] max-w-[300px]  sm:max-w-none mt-[150px] justify-center items-center text-4xl md:text-[42px]  text-center ">
         <h1> We generate our questions to  your <span> <FlipWords className='relative left-[-5px]' words={words} /></span>  </h1>
       
       </div>

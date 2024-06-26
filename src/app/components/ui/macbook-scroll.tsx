@@ -81,7 +81,7 @@ export const MacbookScroll = ({
       >
         {title || (
           <span>
-            Ruva is the future of mock interviews
+            Personalized Dashboard
           </span>
         )}
       </motion.h2>
@@ -171,7 +171,7 @@ export const Lid = ({
       >
         <div className="absolute left-0 right-0 bg-[#272729] rounded-lg" />
         <Image
-          src={'/Capture.PNG'}
+          src={'/dashboard.PNG'}
           alt="aceternity logo"
           fill
           className="object-cover object-left-top absolute rounded-lg inset-0 h-full w-full"

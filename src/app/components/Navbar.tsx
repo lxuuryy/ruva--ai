@@ -67,12 +67,13 @@ function Navbar() {
                         </div>
                     </div>
                 ) : (
-                    <div>
-                    <Link href="/sign-in">
-                       
-                        Sign in
-                        
-                    </Link>
+                    <div className="flex justify-between items-center">
+                     <div className="relative w-[150px] h-[150px]">
+                        <Image src="/RUVA.ai.png" fill alt="logo" />
+                       </div>
+                       <div>
+                    <Button className=" mx-2" onClick={() => router.push('/sign-in')}> LOGIN </Button>
+</div>
                     </div>
                 )
           }

@@ -3,6 +3,7 @@ import { WavyBackgroundDemo } from './WavyBackgroundDemo'
 import { MacbookScroll } from './macbook-scroll'
 import BentoDemo from './BentoDemo'
 import { FlipWords } from './flip-words'
+import BackgroundBeamsDemo from './BackgroundBeamsDemo'
 
 function Main() {
   const words = ['Hello', 'World', 'This', 'is', 'a', 'test']
@@ -17,7 +18,7 @@ function Main() {
         <MacbookScroll />
 
         </div>
-        
+          <BackgroundBeamsDemo />
     </div>
   )
 }
