@@ -153,7 +153,6 @@ export const Lid = ({
         >
           <span className="text-white ">
             <div className=" w-[200px]">
-            <Image src={'/RUVA.AI.png'} alt="aceternity logo" fill />
             </div>
           </span>
         </div>

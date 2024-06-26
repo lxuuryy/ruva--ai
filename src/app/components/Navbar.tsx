@@ -9,6 +9,7 @@ import {toast} from 'sonner'
 import {Zap} from 'lucide-react'
 import SubscriptionDialog from "./ui/SubscriptionDialog";
 import Image from 'next/image'
+import ShimmerButton from "./magicui/shimmer-button";
 
 
 
@@ -51,15 +52,18 @@ function Navbar() {
                     <div className="w-full flex justify-between items-center">
                        <div className="relative w-[150px] h-[150px]">
                         <Image src="/RUVA.ai.png" fill alt="logo" />
+                                                    <ShimmerButton className=" mx-2" onClick={() => router.push('/sign-in')}> LOGIN </ShimmerButton>
+
                        </div>
                         <div className="m-2">
-                        {isSignedIn && newUser && (<Button onClick={redeemCredits}> Redeem 10 credits </Button>)}
+                        {isSignedIn && newUser && (<ShimmerButton onClick={redeemCredits}> Redeem 10 credits </ShimmerButton>)}
                         <div className="flex my-2 ">
-                            {isSignedIn && !newUser && (<Button className="text-white text-lg  mx-2"> <Zap  className="mx-2"/>  Credits: {credits} </Button>)}
+                            {isSignedIn && !newUser && (<ShimmerButton className="text-white text-lg  mx-2"> <Zap  className="mx-2"/>  Credits: {credits} </ShimmerButton>)}
                             {isSignedIn && notNewUser && (
                             <div>
-                            <Button className=" mx-2" onClick={toggleDrawer}> Get more credits </Button>
+                            <ShimmerButton className=" mx-2" onClick={toggleDrawer}> Get more credits </ShimmerButton>
                             <SubscriptionDialog open={isDrawerOpen} onOpenChange={setIsDrawerOpen} />
+
                             </div>)}
                         
                         
@@ -72,7 +76,8 @@ function Navbar() {
                         <Image src="/RUVA.ai.png" fill alt="logo" />
                        </div>
                        <div>
-                    <Button className=" mx-2" onClick={() => router.push('/sign-in')}> LOGIN </Button>
+                        
+                    <ShimmerButton className=" mx-2" onClick={() => router.push('/sign-in')}> LOGIN </ShimmerButton>
 </div>
                     </div>
                 )
